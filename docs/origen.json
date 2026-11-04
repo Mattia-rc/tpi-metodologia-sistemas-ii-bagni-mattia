@@ -1,0 +1,11 @@
+{
+  "archivo": "proyecto_metodologias(1).zip",
+  "sha256": "a496f84b69a16a0cff53a1b0512f047c5410ded6a7a25234720f85ad06de0826",
+  "hechos": [
+    "Dos proyectos Django con modelos y vistas sin implementar.",
+    "Angular con pantalla generada.",
+    "Sin entidades ni operaciones académicas."
+  ],
+  "version_funcional_inicial": "Construida después de la recepción con asistencia de ChatGPT.",
+  "no_incluidos": "Entornos virtuales, node_modules, base de datos recibida y claves generadas."
+}

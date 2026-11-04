@@ -1,0 +1,63 @@
+<main>
+  <header><div><p class="eyebrow">METODOLOGÍA DE SISTEMAS II · PROTOTIPO LOCAL</p>
+    <h1>Solicitudes académicas</h1><p>Registro y seguimiento de consultas de estudiantes.</p></div>
+    <span class="badge">Datos ficticios</span></header>
+  <section class="resumen" aria-label="Reporte global">
+    <article><span>Total</span><strong>{{ reporte().total }}</strong></article>
+    <article><span>Pendientes</span><strong>{{ reporte().por_estado.pendiente || 0 }}</strong></article>
+    <article><span>En proceso</span><strong>{{ reporte().por_estado.en_proceso || 0 }}</strong></article>
+    <article><span>Resueltas</span><strong>{{ reporte().por_estado.resuelta || 0 }}</strong></article>
+  </section>
+  @if (error()) {<p role="alert" class="error">{{ error() }}</p>}
+  @if (aviso()) {<p role="status" class="aviso">{{ aviso() }}</p>}
+  @if (catalogos(); as c) {
+  <div class="columnas">
+    <section class="panel"><h2>Nueva solicitud</h2>
+      <form #alta="ngForm" (ngSubmit)="registrar()">
+        <label>Estudiante<select name="estudiante" [(ngModel)]="formulario.estudiante_id" required>
+          <option [ngValue]="null">Seleccionar estudiante</option>
+          @for (e of c.estudiantes; track e.id) {<option [ngValue]="e.id">{{ e.nombre }} · {{ e.legajo }}</option>}
+        </select></label>
+        <label>Título<input name="titulo" [(ngModel)]="formulario.titulo" required maxlength="120"></label>
+        <label>Descripción<textarea name="descripcion" [(ngModel)]="formulario.descripcion" required maxlength="2000" rows="3"></textarea></label>
+        <div class="pareja"><label>Tipo<select name="tipo" [(ngModel)]="formulario.tipo">
+          @for (t of c.tipos; track t) {<option [value]="t">{{ t }}</option>}</select></label>
+        <label>Prioridad<select name="prioridad" [(ngModel)]="formulario.prioridad">
+          @for (p of c.prioridades; track p) {<option [value]="p">{{ p }}</option>}</select></label></div>
+        <label>Responsable<select name="responsable" [(ngModel)]="formulario.responsable_id">
+          <option [ngValue]="null">Sin asignar</option>
+          @for (r of c.responsables; track r.id) {<option [ngValue]="r.id">{{ r.nombre }}</option>}
+        </select></label>
+        <button type="submit" [disabled]="alta.invalid || guardando() || cargando()">Registrar solicitud</button>
+      </form>
+    </section>
+    <section class="panel listado"><h2>Seguimiento</h2><p class="ayuda">El reporte superior muestra todas las solicitudes; los filtros se aplican al listado.</p>
+      <form class="filtros" (ngSubmit)="recargar()">
+        <label>Buscar por título<input name="q" [(ngModel)]="filtros.q" placeholder="Ej.: certificado"></label>
+        <label>Estado<select name="estado" [(ngModel)]="filtros.estado"><option value="">Todos</option>
+          @for (e of c.estados; track e) {<option [value]="e">{{ e }}</option>}</select></label>
+        <label>Prioridad<select name="prioridadFiltro" [(ngModel)]="filtros.prioridad"><option value="">Todas</option>
+          @for (p of c.prioridades; track p) {<option [value]="p">{{ p }}</option>}</select></label>
+        <button type="submit" class="secundario" [disabled]="cargando() || guardando()">Filtrar</button>
+      </form>
+      @if (cargando()) {<p role="status">Cargando solicitudes…</p>}
+      @else {
+        <div class="tarjetas">
+        @for (s of solicitudes(); track s.id) {
+          <article class="solicitud"><div class="encabezado"><span>#{{ s.id }} · {{ s.tipo }}</span><span class="prioridad">{{ s.prioridad }}</span></div>
+            <h3>{{ s.titulo }}</h3><p>{{ s.descripcion }}</p><p class="ayuda">{{ s.estudiante }}</p>
+            <div class="pareja"><label>Estado de #{{ s.id }}
+              <select [ngModel]="s.estado" (ngModelChange)="actualizar(s.id, {estado: $event})" [disabled]="guardando() || cargando()">
+                @for (e of c.estados; track e) {<option [value]="e">{{ e }}</option>}</select></label>
+              <label>Responsable de #{{ s.id }}<select [ngModel]="s.responsable_id" (ngModelChange)="actualizar(s.id, {responsable_id: $event})" [disabled]="guardando() || cargando()">
+                <option [ngValue]="null">Sin asignar</option>
+                @for (r of c.responsables; track r.id) {<option [ngValue]="r.id">{{ r.nombre }}</option>}</select></label></div>
+          </article>
+        } @empty {<p>No hay solicitudes con estos filtros.</p>}
+        </div>
+      }
+    </section>
+  </div>
+  } @else if (!cargando()) {<button type="button" onclick="location.reload()">Reintentar conexión</button>}
+  <footer>Bagni Mattia · Trabajo práctico integrador · Demostración sin autenticación</footer>
+</main>
