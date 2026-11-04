@@ -56,3 +56,11 @@ No se simula una revisión por otra persona: las observaciones son revisión té
 Prototipo local, sin autenticación ni autorización por roles. No publicar datos reales.
 Django 4.2 es una dependencia heredada sin soporte; una actualización a una rama mantenida,
 con su propia verificación, queda fuera del refactoring de este caso. No desplegar esta demo en producción.
+
+## Informe editable
+El borrador PDF y Markdown están en `informe/`. Para regenerarlos tras completar los datos:
+```bash
+python -m pip install -r requirements-docs.txt
+python scripts/generar_informe.py
+```
+La reflexión individual debe incorporarse con contenido propio antes de entregar. El documento se mantiene como borrador hasta completar los recursos pendientes.
