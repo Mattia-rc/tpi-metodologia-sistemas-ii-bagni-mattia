@@ -1,0 +1,157 @@
+{
+  "contrato": [
+    {
+      "paso": "catalogos",
+      "status": 200,
+      "json": {
+        "estudiantes": [
+          {
+            "id": 1,
+            "nombre": "Estudiante Contrato",
+            "legajo": "SINT-1"
+          }
+        ],
+        "responsables": [
+          {
+            "id": 1,
+            "nombre": "Responsable Contrato",
+            "area": "Demo"
+          }
+        ],
+        "tipos": [
+          "certificado",
+          "equivalencia",
+          "consulta"
+        ],
+        "prioridades": [
+          "baja",
+          "media",
+          "alta"
+        ],
+        "estados": [
+          "pendiente",
+          "en_proceso",
+          "resuelta"
+        ]
+      }
+    },
+    {
+      "paso": "listado_vacio",
+      "status": 200,
+      "json": {
+        "solicitudes": []
+      }
+    },
+    {
+      "paso": "alta",
+      "status": 201,
+      "json": {
+        "id": 1,
+        "titulo": "Certificado",
+        "descripcion": "Texto ficticio",
+        "tipo": "certificado",
+        "prioridad": "alta",
+        "estado": "pendiente",
+        "estudiante_id": 1,
+        "estudiante": "Estudiante Contrato",
+        "responsable_id": null,
+        "responsable": null
+      }
+    },
+    {
+      "paso": "asignar",
+      "status": 200,
+      "json": {
+        "id": 1,
+        "titulo": "Certificado",
+        "descripcion": "Texto ficticio",
+        "tipo": "certificado",
+        "prioridad": "alta",
+        "estado": "pendiente",
+        "estudiante_id": 1,
+        "estudiante": "Estudiante Contrato",
+        "responsable_id": 1,
+        "responsable": "Responsable Contrato"
+      }
+    },
+    {
+      "paso": "resolver",
+      "status": 200,
+      "json": {
+        "id": 1,
+        "titulo": "Certificado",
+        "descripcion": "Texto ficticio",
+        "tipo": "certificado",
+        "prioridad": "alta",
+        "estado": "resuelta",
+        "estudiante_id": 1,
+        "estudiante": "Estudiante Contrato",
+        "responsable_id": 1,
+        "responsable": "Responsable Contrato"
+      }
+    },
+    {
+      "paso": "filtrar",
+      "status": 200,
+      "json": {
+        "solicitudes": [
+          {
+            "id": 1,
+            "titulo": "Certificado",
+            "descripcion": "Texto ficticio",
+            "tipo": "certificado",
+            "prioridad": "alta",
+            "estado": "resuelta",
+            "estudiante_id": 1,
+            "estudiante": "Estudiante Contrato",
+            "responsable_id": 1,
+            "responsable": "Responsable Contrato"
+          }
+        ]
+      }
+    },
+    {
+      "paso": "reporte",
+      "status": 200,
+      "json": {
+        "total": 1,
+        "por_estado": {
+          "pendiente": 0,
+          "en_proceso": 0,
+          "resuelta": 1
+        }
+      }
+    },
+    {
+      "paso": "quitar_responsable",
+      "status": 200,
+      "json": {
+        "id": 1,
+        "titulo": "Certificado",
+        "descripcion": "Texto ficticio",
+        "tipo": "certificado",
+        "prioridad": "alta",
+        "estado": "resuelta",
+        "estudiante_id": 1,
+        "estudiante": "Estudiante Contrato",
+        "responsable_id": null,
+        "responsable": null
+      }
+    },
+    {
+      "paso": "error_validacion",
+      "status": 400,
+      "json": {
+        "error": "Título requerido, máximo 120 caracteres."
+      }
+    },
+    {
+      "paso": "inexistente",
+      "status": 404,
+      "json": {
+        "error": "Solicitud inexistente."
+      }
+    }
+  ],
+  "consultas_listado_11_solicitudes": 1
+}

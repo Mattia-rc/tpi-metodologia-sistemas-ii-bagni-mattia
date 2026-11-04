@@ -1,0 +1,120 @@
+{
+  "tipo": "HTTP real contra Angular dev server y Django, no navegador gráfico",
+  "pasos": [
+    {
+      "paso": "frontend_servido",
+      "status": 200,
+      "respuesta": null
+    },
+    {
+      "paso": "catalogos_por_proxy",
+      "status": 200,
+      "respuesta": {
+        "estudiantes": [
+          {
+            "id": 1,
+            "nombre": "Estudiante Demo A",
+            "legajo": "DEMO-001"
+          },
+          {
+            "id": 2,
+            "nombre": "Estudiante Demo B",
+            "legajo": "DEMO-002"
+          }
+        ],
+        "responsables": [
+          {
+            "id": 1,
+            "nombre": "Responsable Demo",
+            "area": "Secretaría académica"
+          }
+        ],
+        "tipos": [
+          "certificado",
+          "equivalencia",
+          "consulta"
+        ],
+        "prioridades": [
+          "baja",
+          "media",
+          "alta"
+        ],
+        "estados": [
+          "pendiente",
+          "en_proceso",
+          "resuelta"
+        ]
+      }
+    },
+    {
+      "paso": "rechazo_sin_csrf",
+      "status": 403,
+      "respuesta": null
+    },
+    {
+      "paso": "registro_con_csrf",
+      "status": 201,
+      "respuesta": {
+        "id": 3,
+        "titulo": "Verificación HTTP de integración",
+        "descripcion": "Registro ficticio generado durante la prueba real del proxy.",
+        "tipo": "consulta",
+        "prioridad": "alta",
+        "estado": "pendiente",
+        "estudiante_id": 1,
+        "estudiante": "Estudiante Demo A",
+        "responsable_id": null,
+        "responsable": null
+      }
+    },
+    {
+      "paso": "cambio_y_asignacion",
+      "status": 200,
+      "respuesta": {
+        "id": 3,
+        "titulo": "Verificación HTTP de integración",
+        "descripcion": "Registro ficticio generado durante la prueba real del proxy.",
+        "tipo": "consulta",
+        "prioridad": "alta",
+        "estado": "resuelta",
+        "estudiante_id": 1,
+        "estudiante": "Estudiante Demo A",
+        "responsable_id": 1,
+        "responsable": "Responsable Demo"
+      }
+    },
+    {
+      "paso": "filtro_por_proxy",
+      "status": 200,
+      "respuesta": {
+        "solicitudes": [
+          {
+            "id": 3,
+            "titulo": "Verificación HTTP de integración",
+            "descripcion": "Registro ficticio generado durante la prueba real del proxy.",
+            "tipo": "consulta",
+            "prioridad": "alta",
+            "estado": "resuelta",
+            "estudiante_id": 1,
+            "estudiante": "Estudiante Demo A",
+            "responsable_id": 1,
+            "responsable": "Responsable Demo"
+          }
+        ]
+      }
+    },
+    {
+      "paso": "reporte_por_proxy",
+      "status": 200,
+      "respuesta": {
+        "total": 3,
+        "por_estado": {
+          "pendiente": 1,
+          "en_proceso": 1,
+          "resuelta": 1
+        }
+      }
+    }
+  ],
+  "resultado": "7 pasos aprobados; la cookie y el token no se almacenan."
+}

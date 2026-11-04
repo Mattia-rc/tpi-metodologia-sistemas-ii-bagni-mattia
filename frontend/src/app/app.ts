@@ -19,7 +19,12 @@ export class App {
   formulario = this.vacio();
 
   constructor() {
+    this.cargarCatalogos();
+  }
+
+  cargarCatalogos() {
     this.cargando.set(true);
+    this.error.set('');
     this.api.catalogos().subscribe({
       next: c => {this.catalogos.set(c); this.recargar();},
       error: e => {this.error.set(this.mensaje(e)); this.cargando.set(false);}

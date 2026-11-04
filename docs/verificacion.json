@@ -1,0 +1,34 @@
+{
+  "pruebas_backend_inicial": 21,
+  "pruebas_backend_final": 23,
+  "pruebas_frontend_inicial": 6,
+  "pruebas_frontend_final": 7,
+  "pasos_contrato_identicos": 10,
+  "consultas_listado_inicial": 22,
+  "consultas_listado_final": 1,
+  "verificaciones": [
+    {
+      "evidencia": "backend_final.txt",
+      "codigo_salida": 0
+    },
+    {
+      "evidencia": "migraciones_final.txt",
+      "codigo_salida": 0
+    },
+    {
+      "evidencia": "build_final.txt",
+      "codigo_salida": 0
+    },
+    {
+      "evidencia": "frontend_final.txt",
+      "codigo_salida": 0
+    }
+  ],
+  "entorno": "Python 3.12.14, Node 24.22.1, Django 4.2.30, Angular 22.2, Vitest 5.1.0",
+  "limitaciones": [
+    "Componentes Angular probados con JSDOM y HTTP simulado.",
+    "Integración real mediante proxy HTTP se registra por separado.",
+    "No se realizó inspección visual de la aplicación con un navegador gráfico.",
+    "La compilación Angular requirió una adaptación local de la consulta RSS del proceso, bloqueada por el sandbox. No se modificó código de la aplicación para ese ajuste."
+  ]
+}

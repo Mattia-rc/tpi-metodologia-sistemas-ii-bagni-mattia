@@ -1,0 +1,14 @@
+Comando: node node_modules/@angular/cli/bin/ng.js build
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+main-UOAY7C2M.js    | main          | 212.17 kB |                57.75 kB
+styles-MML574CU.css | styles        | 623 bytes |               623 bytes
+
+                    | Initial total | 212.79 kB |                58.37 kB
+
+Application bundle generation complete. [3.179 seconds] - 2026-11-04T16:30:56.694Z
+
+Output location: /workspace/scratch/3eb3d3f91ce6/trabajo/proyecto_tpi/frontend/dist/front-proyecto
+

@@ -1,0 +1,15 @@
+Comando: node node_modules/@angular/cli/bin/ng.js test --watch=false
+
+❯ Building...
+✔ Building...
+Application bundle generation complete. [2.018 seconds] - 2026-11-04T16:30:59.337Z
+
+
+ RUN  v5.1.0 /workspace/scratch/3eb3d3f91ce6/trabajo/proyecto_tpi/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  13:30:59
+   Duration  2.25s (environment 47%, tests 24%, setup 18%, transform 7%, import 4%)
+

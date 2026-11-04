@@ -1,0 +1,3 @@
+Comando: python manage.py makemigrations --check --dry-run
+
+No changes detected

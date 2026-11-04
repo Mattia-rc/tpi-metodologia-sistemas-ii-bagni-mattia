@@ -103,4 +103,17 @@ describe('Flujos de solicitudes en pantalla', () => {
     expect(f.nativeElement.querySelector('[role="alert"]').textContent).toContain('Verificá el backend.');
     expect(f.componentInstance.cargando()).toBe(false);
   });
+
+  it('permite reintentar la conexión desde el botón de la pantalla', () => {
+    const f = TestBed.createComponent(App);
+    http.expectOne('/api/catalogos/').error(new ProgressEvent('error'));
+    f.detectChanges();
+    f.nativeElement.querySelector('button').click();
+    http.expectOne('/api/catalogos/').flush(catalogos);
+    http.expectOne('/api/solicitudes/').flush({ solicitudes: [] });
+    http.expectOne('/api/reporte/').flush({ total: 0, por_estado: { pendiente: 0, en_proceso: 0, resuelta: 0 } });
+    f.detectChanges();
+    expect(f.nativeElement.querySelector('[role="alert"]')).toBeNull();
+    expect(f.nativeElement.querySelector('h2').textContent).toBe('Nueva solicitud');
+  });
 });

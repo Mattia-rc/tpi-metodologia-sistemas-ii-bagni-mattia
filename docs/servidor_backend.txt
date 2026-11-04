@@ -1,0 +1,34 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 04, 2026 - 13:32:13
+Django version 4.2.30, using settings 'back_proyecto.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+[04/Nov/2026 13:32:13] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:13] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:14] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:14] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:14] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:14] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:14] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:15] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:15] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:15] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:15] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:16] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:16] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:16] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:16] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:16] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:17] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:17] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:17] "GET /api/catalogos/ HTTP/1.1" 200 394
+[04/Nov/2026 13:32:17] "GET /api/catalogos/ HTTP/1.1" 200 394
+Forbidden (CSRF token missing.): /api/solicitudes/
+[04/Nov/2026 13:32:17] "POST /api/solicitudes/ HTTP/1.1" 403 2511
+[04/Nov/2026 13:32:17] "POST /api/solicitudes/ HTTP/1.1" 201 308
+[04/Nov/2026 13:32:17] "PATCH /api/solicitudes/3/ HTTP/1.1" 200 318
+[04/Nov/2026 13:32:17] "GET /api/solicitudes/?q=Verificaci%C3%B3n+HTTP&estado=resuelta HTTP/1.1" 200 337
+[04/Nov/2026 13:32:17] "GET /api/reporte/ HTTP/1.1" 200 76
