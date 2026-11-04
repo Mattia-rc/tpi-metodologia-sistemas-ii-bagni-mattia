@@ -1,0 +1,6 @@
+Ejecución real en el entorno de trabajo.
+Comando: node node_modules/@angular/cli/bin/ng.js test --watch=false
+NODE_OPTIONS: precarga local para reemplazar solamente la consulta de RSS bloqueada por el sandbox.
+Resultado: 1 archivo de pruebas aprobado, 6 pruebas aprobadas. Vitest 5.1.0.
+Build de producción inicial: aprobado, 212.22 kB iniciales.
+El primer intento sin adaptación del entorno falló por uv_resident_set_memory; no fue un error del código Angular.

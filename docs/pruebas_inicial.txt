@@ -1,0 +1,38 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Found 21 test(s).
+Operations to perform:
+  Apply all migrations: contenttypes, mi_app
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying mi_app.0001_initial... OK
+System check identified no issues (0 silenced).
+test_actualizacion_invalida_es_atomica (mi_app.tests.ContratoApiTests.test_actualizacion_invalida_es_atomica) ... ok
+test_actualizacion_rechaza_campos_y_vacio (mi_app.tests.ContratoApiTests.test_actualizacion_rechaza_campos_y_vacio) ... ok
+test_asignar_y_quitar_responsable (mi_app.tests.ContratoApiTests.test_asignar_y_quitar_responsable) ... ok
+test_cambio_estado_persiste (mi_app.tests.ContratoApiTests.test_cambio_estado_persiste) ... ok
+test_campos_invalidos_no_persisten (mi_app.tests.ContratoApiTests.test_campos_invalidos_no_persisten) ... ok
+test_carga_demo_repetible (mi_app.tests.ContratoApiTests.test_carga_demo_repetible) ... Datos ficticios disponibles.
+Datos ficticios disponibles.
+ok
+test_catalogos_datos_y_cookie_csrf (mi_app.tests.ContratoApiTests.test_catalogos_datos_y_cookie_csrf) ... ok
+test_csrf_se_exige_y_token_funciona (mi_app.tests.ContratoApiTests.test_csrf_se_exige_y_token_funciona) ... ok
+test_filtro_sin_coincidencia (mi_app.tests.ContratoApiTests.test_filtro_sin_coincidencia) ... ok
+test_filtros_combinados (mi_app.tests.ContratoApiTests.test_filtros_combinados) ... ok
+test_filtros_invalidos (mi_app.tests.ContratoApiTests.test_filtros_invalidos) ... ok
+test_json_invalido (mi_app.tests.ContratoApiTests.test_json_invalido) ... ok
+test_listado_orden_descendente (mi_app.tests.ContratoApiTests.test_listado_orden_descendente) ... ok
+test_metodos_no_admitidos (mi_app.tests.ContratoApiTests.test_metodos_no_admitidos) ... ok
+test_patch_json_invalido (mi_app.tests.ContratoApiTests.test_patch_json_invalido) ... ok
+test_recorta_espacios (mi_app.tests.ContratoApiTests.test_recorta_espacios) ... ok
+test_registro_con_responsable (mi_app.tests.ContratoApiTests.test_registro_con_responsable) ... ok
+test_registro_persiste_y_devuelve_contrato (mi_app.tests.ContratoApiTests.test_registro_persiste_y_devuelve_contrato) ... ok
+test_reporte_global (mi_app.tests.ContratoApiTests.test_reporte_global) ... ok
+test_reporte_vacio (mi_app.tests.ContratoApiTests.test_reporte_vacio) ... ok
+test_solicitud_inexistente (mi_app.tests.ContratoApiTests.test_solicitud_inexistente) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.047s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "D01",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 26,
+    "evidencia": "def solicitudes(request):"
+  },
+  {
+    "id": "D02",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 29,
+    "evidencia": "datos = json.loads(request.body)"
+  },
+  {
+    "id": "D03",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 51,
+    "evidencia": "return JsonResponse({'id': s.id, 'titulo': s.titulo, 'descripcion': s.descripcion,"
+  },
+  {
+    "id": "D04",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 20,
+    "evidencia": "def crear_solicitud(estudiante_id, titulo, descripcion, tipo, prioridad, responsable_id):"
+  },
+  {
+    "id": "D05",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 40,
+    "evidencia": "if datos.get('tipo') not in ['certificado', 'equivalencia', 'consulta']:"
+  },
+  {
+    "id": "D06",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 71,
+    "evidencia": "for s in registros:"
+  },
+  {
+    "id": "D07",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 113,
+    "evidencia": "def reporte(request):"
+  },
+  {
+    "id": "D08",
+    "version": "estado-inicial",
+    "archivo": "frontend/src/app/app.ts",
+    "linea": 8,
+    "evidencia": "private http = inject(HttpClient);"
+  },
+  {
+    "id": "D09",
+    "version": "estado-inicial",
+    "archivo": "frontend/src/app/app.ts",
+    "linea": 9,
+    "evidencia": "catalogos = signal<any>(null);"
+  },
+  {
+    "id": "D10",
+    "version": "estado-inicial",
+    "archivo": "backend/mi_app/views.py",
+    "linea": 81,
+    "evidencia": "def actualizar_solicitud(request, pk):"
+  }
+]
