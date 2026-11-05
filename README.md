@@ -48,7 +48,6 @@ python manage.py makemigrations --check --dry-run
 Desde `frontend/`: `npm run build` y `npm test -- --watch=false`.
 
 ## Entrega
-Completar comisión, docente, enlace GitHub y enlace al video en `docs/datos_entrega.json`.
 Grabar video propio de 10 a 15 minutos. Revisar el informe y el registro de asistencia antes de entregar.
 No se simula una revisión por otra persona: las observaciones son revisión técnica asistida.
 
@@ -57,10 +56,4 @@ Prototipo local, sin autenticación ni autorización por roles. No publicar dato
 Django 4.2 es una dependencia heredada sin soporte; una actualización a una rama mantenida,
 con su propia verificación, queda fuera del refactoring de este caso. No desplegar esta demo en producción.
 
-## Informe editable
-El borrador PDF y Markdown están en `informe/`. Para regenerarlos tras completar los datos:
-```bash
-python -m pip install -r requirements-docs.txt
-python scripts/generar_informe.py
-```
-La reflexión individual debe incorporarse con contenido propio antes de entregar. El documento se mantiene como borrador hasta completar los recursos pendientes.
+
